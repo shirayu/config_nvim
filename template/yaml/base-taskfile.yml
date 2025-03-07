@@ -1,0 +1,14 @@
+
+version: "3"
+vars:
+  TARGET_DIR: ./target
+
+
+tasks:
+  default:
+    deps: [task1]
+
+  task1:
+    cmds:
+      - >-
+        python sample.py -i {{ .TARGET_DIR }} -o output

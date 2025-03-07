@@ -1,0 +1,14 @@
+{
+  "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "lualine.nvim": { "branch": "master", "commit": "f4f791f67e70d378a754d02da068231d2352e5bc" },
+  "numb.nvim": { "branch": "master", "commit": "7f564e638d3ba367abf1ec91181965b9882dd509" },
+  "nvim-tree.lua": { "branch": "master", "commit": "c09ff35de503a41fa62465c6b4ae72d96e7a7ce4" },
+  "nvim-ts-context-commentstring": { "branch": "main", "commit": "1b212c2eee76d787bbea6aa5e92a2b534e7b4f8f" },
+  "nvim-web-devicons": { "branch": "master", "commit": "ab4cfee554e501f497bce0856788d43cf2eb93d7" },
+  "sonictemplate-vim": { "branch": "master", "commit": "822a784af2f9df60d5bf5c0d00b816faa40cedeb" },
+  "vim-gitgutter": { "branch": "main", "commit": "7b0b5098e3e57be86bb96cfbf2b8902381eef57c" },
+  "vim-renamer": { "branch": "master", "commit": "9c6346eb4556cf2d8ca55de6969247ab14fe2383" },
+  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
+  "yanktmp.vim": { "branch": "master", "commit": "6fe8bf72ca4fd4dff1ef5e239fd032f39fc04c12" }
+}

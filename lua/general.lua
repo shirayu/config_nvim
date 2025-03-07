@@ -1,0 +1,75 @@
+-- 行番号
+vim.o.number = true
+
+-- 起動時のメッセージを無効
+vim.o.shortmess = vim.o.shortmess .. "I"
+
+vim.g.netrw_dirhistmax = 0
+
+vim.o.whichwrap = "b,s,h,l,<,>,[,]"
+
+vim.cmd([[colorscheme vim]])
+
+vim.o.foldlevel = 100
+vim.o.foldenable = false
+
+vim.o.swapfile = false
+vim.o.viminfo = ""
+
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.tabstop = 8
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+
+-- スペルチェック設定
+vim.opt.spelllang = { "en", "cjk" }
+vim.opt.spell = true
+
+-- トリプルESCでスペルチェックをオフに
+vim.keymap.set("n", "<Esc><Esc><Esc>", ":set nospell<CR><Esc>", { silent = true })
+
+-- 検索設定
+vim.opt.ignorecase = true -- 大文字小文字を区別しない
+vim.opt.smartcase = true -- 検索文字に大文字がある場合は区別
+vim.opt.incsearch = true -- インクリメンタルサーチ
+vim.opt.hlsearch = true -- 検索結果をハイライト
+
+-- 括弧のマッチング
+vim.opt.showmatch = true
+vim.opt.matchpairs:append("<:>") -- '<>'を括弧のペアに追加
+
+-- バックスペースの設定
+vim.opt.backspace = { "indent", "eol", "start" }
+
+-- 先頭ゼロ付きの数値を10進数と認識
+vim.opt.nrformats = ""
+
+-- マウス無効
+vim.opt.mouse = ""
+
+-- カーソル行
+vim.opt.cursorline = true
+vim.cmd([[
+      highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+      highlight CursorLine gui=underline guifg=NONE guibg=NONE
+]])
+
+-- Nfkc command
+vim.api.nvim_create_user_command("Nfkc", function()
+    local buf = vim.api.nvim_get_current_buf()
+    local text = table.concat(vim.api.nvim_buf_get_lines(buf, 0, -1, false), "\n")
+
+    local result = vim.fn.system("perl -CSD -MUnicode::Normalize -pe '$_ = NFKC($_)'", text)
+
+    if result then
+        vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(result, "\n"))
+    end
+end, {})
+
+-- Ctrl-zを無効化
+vim.keymap.set("n", "<C-z>", "<nop>", { noremap = true, silent = true })
+
+-- ダブルESCで検索ハイライトを無効化
+vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR><Esc>", { noremap = true, silent = true })
