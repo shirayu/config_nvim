@@ -1,0 +1,26 @@
+{
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck",
+    "yaml": ["yamllint"]
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "sh": "shfmt"
+  },
+  "diagnostic.checkCurrentLine": true,
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.parameterTypes": false,
+  "pyright.inlayHints.variableTypes": false,
+  "yaml.schemaStore.enable": true,
+  "yaml.schemas": {
+    "https://taskfile.dev/schema.json": [
+      "*Taskfile.yml",
+      "*taskfile.yml",
+      "*Taskfile.yaml",
+      "*taskfile.yaml",
+      "*Taskfile.dist.yml",
+      "*taskfile.dist.yml",
+      "*Taskfile.dist.yaml",
+      "*taskfile.dist.yaml"
+    ]
+  }
+}
