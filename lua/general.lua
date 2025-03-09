@@ -32,9 +32,9 @@ vim.keymap.set("n", "<Esc><Esc><Esc>", ":set nospell<CR><Esc>", { silent = true 
 
 -- 検索設定
 vim.opt.ignorecase = true -- 大文字小文字を区別しない
-vim.opt.smartcase = true -- 検索文字に大文字がある場合は区別
-vim.opt.incsearch = true -- インクリメンタルサーチ
-vim.opt.hlsearch = true -- 検索結果をハイライト
+vim.opt.smartcase = true  -- 検索文字に大文字がある場合は区別
+vim.opt.incsearch = true  -- インクリメンタルサーチ
+vim.opt.hlsearch = true   -- 検索結果をハイライト
 
 -- 括弧のマッチング
 vim.opt.showmatch = true
