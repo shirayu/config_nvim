@@ -39,6 +39,7 @@ if [[ $1 == "load" ]]; then
 else
     (
         TAGERT=$(echo \
+            coc-lua \
             coc-markdownlint \
             coc-diagnostic \
             coc-css \
