@@ -2,8 +2,8 @@ local function format_code()
     if vim.bo.filetype == "python" then
         vim.cmd("CocCommand python.sortImports")
     elseif vim.bo.filetype == "markdown" then
-        local spath = vim.fn.stdpath("config") .. '/markdownfix.bash'
-        ExecForTexts('bash', spath)
+        local spath = vim.fn.stdpath("config") .. "/markdownfix.bash"
+        ExecForTexts("bash", spath)
         return
     end
 

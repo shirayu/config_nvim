@@ -1,38 +1,38 @@
 -- Preserve function in Lua
 function Preserve(command)
     -- Save the last search.
-    local search = vim.fn.getreg('/')
+    local search = vim.fn.getreg("/")
     -- Save the current cursor position.
-    local cursor_position = vim.fn.getpos('.')
+    local cursor_position = vim.fn.getpos(".")
     -- Save the current window position.
-    vim.cmd('normal! H')
-    local window_position = vim.fn.getpos('.')
+    vim.cmd("normal! H")
+    local window_position = vim.fn.getpos(".")
 
     -- Restore the cursor position before running the command.
-    vim.fn.setpos('.', cursor_position)
+    vim.fn.setpos(".", cursor_position)
 
     -- Execute the command.
     vim.cmd(command)
 
     -- Restore the last search.
-    vim.fn.setreg('/', search)
+    vim.fn.setreg("/", search)
 
     -- Restore the previous window position.
-    vim.fn.setpos('.', window_position)
-    vim.cmd('normal! zt')
+    vim.fn.setpos(".", window_position)
+    vim.cmd("normal! zt")
 
     -- Restore the cursor position.
-    vim.fn.setpos('.', cursor_position)
+    vim.fn.setpos(".", cursor_position)
 end
 
 -- ExecForTexts function in Lua
 function ExecForTexts(command, args)
     -- Check if the command is executable
     if vim.fn.executable(command) == 1 then
-        Preserve(':silent %!' .. command .. ' ' .. args)
+        Preserve(":silent %!" .. command .. " " .. args)
     else
         -- Show error message if command is not found
-        vim.api.nvim_echo({ { command .. ' not installed!' } }, true, { guifg = '#FF0000' })
+        vim.api.nvim_echo({ { command .. " not installed!" } }, true, { guifg = "#FF0000" })
     end
 end
 
