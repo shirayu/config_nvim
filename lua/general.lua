@@ -8,8 +8,6 @@ vim.g.netrw_dirhistmax = 0
 
 vim.o.whichwrap = "b,s,h,l,<,>,[,]"
 
-vim.cmd([[colorscheme vim]])
-
 vim.o.foldlevel = 100
 vim.o.foldenable = false
 
