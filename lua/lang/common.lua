@@ -5,6 +5,9 @@ local function format_code()
         local spath = vim.fn.stdpath("config") .. "/markdownfix.bash"
         ExecForTexts("bash", spath)
         return
+    elseif vim.bo.filetype == "sh" or vim.bo.filetype == "zsh" then
+        ExecForTexts('shfmt', '-i 4 -ci -bn -s')
+        return
     end
 
     vim.cmd("Format")
