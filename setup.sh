@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# sudo apt install fd-find ripgrep
+
 ExistCmd() {
     echo "Checking $1"
     type "$1" || (echo "$2" && exit 1)
@@ -17,6 +19,8 @@ ExistCmd pnpm || exit 1
 ExistCmd pip || exit 1
 ExistCmd python || exit 1
 ExistCmd nvim || exit 1
+ExistCmd rg
+ExistCmd fdfind
 
 if [[ $1 == "load" ]]; then
     pnpm -C "${DIR_ROOT}/tools" install
