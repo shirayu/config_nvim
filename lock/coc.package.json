@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@yaegassy/coc-ruff": ">=0.8.0",
     "coc-biome": ">=1.8.0",
     "coc-css": ">=2.1.0",
     "coc-diagnostic": ">=0.24.1",

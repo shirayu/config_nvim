@@ -48,7 +48,6 @@ else
             coc-pyright \
             coc-tsserver \
             coc-sh \
-            @yaegassy/coc-ruff \
             coc-biome \
             coc-toml \
             coc-go)
