@@ -9,6 +9,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "ab4cfee554e501f497bce0856788d43cf2eb93d7" },
   "sonictemplate-vim": { "branch": "master", "commit": "822a784af2f9df60d5bf5c0d00b816faa40cedeb" },
   "vim-gitgutter": { "branch": "main", "commit": "7b0b5098e3e57be86bb96cfbf2b8902381eef57c" },
+  "vim-jsonl": { "branch": "main", "commit": "f58de3cfb85c276baa68bf9d9d20c78344810bf7" },
   "vim-renamer": { "branch": "master", "commit": "9c6346eb4556cf2d8ca55de6969247ab14fe2383" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
   "yanktmp.vim": { "branch": "master", "commit": "6fe8bf72ca4fd4dff1ef5e239fd032f39fc04c12" }
