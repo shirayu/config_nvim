@@ -32,8 +32,8 @@ COC_NODE_MODURLES_DIR="$HOME/.config/coc/extensions"
 if [[ $1 == "load" ]]; then
     (
         mkdir -p "${COC_NODE_MODURLES_DIR}"
-        cp "${DIR_ROOT}/lock/coc.package.json" "${COC_NODE_MODURLES_DIR}/package.json" 
-        cp "${DIR_ROOT}/lock/coc.package-lock.json" "${COC_NODE_MODURLES_DIR}/package-lock.json" 
+        cp "${DIR_ROOT}/lock/coc.package.json" "${COC_NODE_MODURLES_DIR}/package.json"
+        cp "${DIR_ROOT}/lock/coc.package-lock.json" "${COC_NODE_MODURLES_DIR}/package-lock.json"
         npm i -C "${COC_NODE_MODURLES_DIR}"
     )
 else
@@ -54,7 +54,7 @@ else
             coc-go)
         nvim -c "CocInstall -sync ${TAGERT}" +qall
         npm i --package-lock-only -C "${COC_NODE_MODURLES_DIR}"
-        SortJson < "${COC_NODE_MODURLES_DIR}/package.json" > "${DIR_ROOT}/lock/coc.package.json"
-        SortJson < "${COC_NODE_MODURLES_DIR}/package-lock.json" > "${DIR_ROOT}/lock/coc.package-lock.json"
+        SortJson <"${COC_NODE_MODURLES_DIR}/package.json" >"${DIR_ROOT}/lock/coc.package.json"
+        SortJson <"${COC_NODE_MODURLES_DIR}/package-lock.json" >"${DIR_ROOT}/lock/coc.package-lock.json"
     )
 fi
