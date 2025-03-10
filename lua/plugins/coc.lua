@@ -3,6 +3,22 @@ return {
     branch = "release",
     lazy = false, -- すぐにロードする場合
     config = function()
+        vim.g.coc_global_extensions = {
+            "coc-lua",
+            "coc-markdownlint",
+            "coc-diagnostic",
+            "coc-css",
+            "coc-json",
+            "coc-yaml",
+            "coc-texlab",
+            "coc-pyright",
+            "coc-tsserver",
+            "coc-sh",
+            "coc-biome",
+            "coc-toml",
+            "coc-go",
+        }
+
         -- Some servers have issues with backup files, see #649
         vim.opt.backup = false
         vim.opt.writebackup = false

@@ -42,21 +42,7 @@ if [[ $1 == "load" ]]; then
     )
 else
     (
-        TAGERT=$(echo \
-            coc-lua \
-            coc-markdownlint \
-            coc-diagnostic \
-            coc-css \
-            coc-json \
-            coc-yaml \
-            coc-texlab \
-            coc-pyright \
-            coc-tsserver \
-            coc-sh \
-            coc-biome \
-            coc-toml \
-            coc-go)
-        nvim -c "CocInstall -sync ${TAGERT}" +qall
+        nvim +'CocUpdateSync' +qall
         npm i --package-lock-only -C "${COC_NODE_MODURLES_DIR}"
         SortJson <"${COC_NODE_MODURLES_DIR}/package.json" >"${DIR_ROOT}/lock/coc.package.json"
         SortJson <"${COC_NODE_MODURLES_DIR}/package-lock.json" >"${DIR_ROOT}/lock/coc.package-lock.json"
