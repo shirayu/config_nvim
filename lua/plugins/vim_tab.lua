@@ -10,8 +10,14 @@ return {
         -- buffer
         vim.keymap.set("n", "<leader>bc", ":BufferClose<CR>",
             { desc = "Close buffer", noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>bn", ":bn<CR>", { desc = "Next buffer", noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>bp", ":bp<CR>", { desc = "Prevout buffer", noremap = true, silent = true })
+
+        for _, key in ipairs({ "<leader>bn", "<C-n>" }) do
+            vim.keymap.set("n", key, ":bn<CR>", { desc = "Next buffer", noremap = true, silent = true })
+        end
+
+        for _, key in ipairs({ "<leader>bp", "<C-p>" }) do
+            vim.keymap.set("n", key, ":bp<CR>", { desc = "Prevout buffer", noremap = true, silent = true })
+        end
     end,
     opts = {
     },
