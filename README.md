@@ -15,3 +15,8 @@ sudo apt install fd-find ripgrep
 
 - `Shift + F`: 言語に応じたフォーマット
 - `Shift + O`: JSONのKeySortありフォーマット
+
+- バッファ操作
+    - `\bc`: 閉じる
+    - `\bp`: 前に
+    - `\bn`: 次に
