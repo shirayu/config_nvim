@@ -1,4 +1,4 @@
-require("general")
+require("config.general")
 require("config.util")
 
 require("config.lazy")
