@@ -1,11 +1,11 @@
 return {
-    "navarasu/onedark.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-        style = 'warmer',
+    {
+        "NvChad/nvim-colorizer.lua",
+        opts = {
+            user_default_options = {
+                mode = "background",
+                names = false,
+            },
+        },
     },
-    config = function()
-        vim.cmd.colorscheme 'onedark'
-    end
 }
