@@ -44,7 +44,9 @@ else
     (
         nvim +'CocUpdateSync' +qall
         npm i --package-lock-only -C "${COC_NODE_MODURLES_DIR}"
-        SortJson <"${COC_NODE_MODURLES_DIR}/package.json" >"${DIR_ROOT}/lock/coc.package.json"
+        python -c 'import sys, json; d=json.load(sys.stdin); d.pop("lastUpdate", None); print(json.dumps(d))' \
+            <"${COC_NODE_MODURLES_DIR}/package.json" \
+            | SortJson >"${DIR_ROOT}/lock/coc.package.json"
         SortJson <"${COC_NODE_MODURLES_DIR}/package-lock.json" >"${DIR_ROOT}/lock/coc.package-lock.json"
     )
 fi
