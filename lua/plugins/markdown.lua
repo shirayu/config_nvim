@@ -16,6 +16,6 @@ return {
         --     -- Add your Windows-specific command here
         -- end
 
-        vim.api.nvim_set_keymap("n", "pv", ":PrevimOpen<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "pv", ":PrevimOpen<CR>", { noremap = true, silent = true })
     end,
 }

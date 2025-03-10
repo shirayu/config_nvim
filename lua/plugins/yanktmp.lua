@@ -11,11 +11,11 @@ return {
         end
 
         -- normalモード(n)
-        vim.api.nvim_set_keymap("n", "sy", ":call YanktmpYank()<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "sy", ":call YanktmpYank()<CR>", { noremap = true, silent = true })
         -- visualモード(x)
-        vim.api.nvim_set_keymap("x", "sy", ":call YanktmpYank()<CR>", { noremap = true, silent = true })
+        vim.keymap.set("x", "sy", ":call YanktmpYank()<CR>", { noremap = true, silent = true })
 
-        vim.api.nvim_set_keymap("n", "sp", ":call YanktmpPaste_p()<CR>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "sP", ":call YanktmpPaste_P()<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "sp", ":call YanktmpPaste_p()<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "sP", ":call YanktmpPaste_P()<CR>", { noremap = true, silent = true })
     end,
 }
