@@ -1,7 +1,9 @@
 
 # NeoVimの設定
 
-`~/.config/nvim`に設置
+```bash
+git clone git@github.com:shirayu/config_nvim.git ~/.config/nvim
+```
 
 ## キーバインド
 
