@@ -3,6 +3,7 @@
 
 ```bash
 git clone git@github.com:shirayu/config_nvim.git ~/.config/nvim
+sudo apt install fd-find ripgrep
 ```
 
 ## キーバインド
