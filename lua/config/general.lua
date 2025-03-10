@@ -25,8 +25,6 @@ vim.opt.softtabstop = 4
 vim.opt.spelllang = { "en", "cjk" }
 vim.opt.spell = true
 
--- トリプルESCでスペルチェックをオフに
-vim.keymap.set("n", "<Esc><Esc><Esc>", ":set nospell<CR><Esc>", { silent = true })
 
 -- 検索設定
 vim.opt.ignorecase = true -- 大文字小文字を区別しない
@@ -65,9 +63,3 @@ vim.api.nvim_create_user_command("Nfkc", function()
         vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(result, "\n"))
     end
 end, {})
-
--- Ctrl-zを無効化
-vim.keymap.set("n", "<C-z>", "<nop>", { noremap = true, silent = true })
-
--- ダブルESCで検索ハイライトを無効化
-vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR><Esc>", { noremap = true, silent = true })
