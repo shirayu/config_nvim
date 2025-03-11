@@ -5,10 +5,10 @@ require("config.util")
 require("config.lazy")
 
 local plugins = {
-    { import = "plugins" },
+  { import = "plugins" },
 }
 local opts = {
-    lockfile = vim.fn.stdpath("config") .. "/lock/lazy-lock.json",
+  lockfile = vim.fn.stdpath("config") .. "/lock/lazy-lock.json",
 }
 require("lazy").setup(plugins, opts)
 
