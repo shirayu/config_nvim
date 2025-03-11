@@ -54,12 +54,12 @@ vim.cmd([[
 
 -- Nfkc command
 vim.api.nvim_create_user_command("Nfkc", function()
-    local buf = vim.api.nvim_get_current_buf()
-    local text = table.concat(vim.api.nvim_buf_get_lines(buf, 0, -1, false), "\n")
+  local buf = vim.api.nvim_get_current_buf()
+  local text = table.concat(vim.api.nvim_buf_get_lines(buf, 0, -1, false), "\n")
 
-    local result = vim.fn.system("perl -CSD -MUnicode::Normalize -pe '$_ = NFKC($_)'", text)
+  local result = vim.fn.system("perl -CSD -MUnicode::Normalize -pe '$_ = NFKC($_)'", text)
 
-    if result then
-        vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(result, "\n"))
-    end
+  if result then
+    vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(result, "\n"))
+  end
 end, {})

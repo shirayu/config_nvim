@@ -1,4 +1,4 @@
 return {
-    "qpkorr/vim-renamer",
-    config = function() end,
+  "qpkorr/vim-renamer",
+  config = function() end,
 }
