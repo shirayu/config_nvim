@@ -12,6 +12,7 @@ sudo apt install fd-find ripgrep
 - `ctrl + f`: ファイラーのオン・オフ (`nvim-tree/nvim-tree.lua`)
 - `\?`: キーバインドの確認 (`folke/which-key.nvim`)
 - `sy`, `sp`: 外部ファイルを利用したYank, Paste (`vim-scripts/yanktmp.vim`)
+- `Ctrl + i`: インデントガイドの表示切り替え
 
 - `Shift + F`: 言語に応じたフォーマット
 - `Shift + O`: JSONのKeySortありフォーマット
