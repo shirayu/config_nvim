@@ -3,6 +3,7 @@ return {
   branch = "0.1.x",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
+    local actions = require("telescope.actions")
     require("telescope").setup({
       {
 
@@ -14,9 +15,11 @@ return {
               -- map actions.which_key to <C-h> (default: <C-/>)
               -- actions.which_key shows the mappings for your picker,
               -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-              ["<C-h>"] = "which_key"
-            }
-          }
+              ["<C-h>"] = "which_key",
+              ["<esc>"] = actions.close,
+            },
+            n = { ["q"] = actions.close },
+          },
         },
         pickers = {
           -- Default configuration for builtin pickers goes here:
@@ -38,9 +41,9 @@ return {
     })
 
     local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-    vim.keymap.set("n", "<leader>fg", builtin.live_grep,  { desc = "Telescope live grep" })
-    vim.keymap.set("n", "<leader>fb", builtin.buffers,    { desc = "Telescope buffers" })
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags,  { desc = "Telescope help tags" })
+    vim.keymap.set("n", "<C-h>", builtin.find_files, { desc = "Telescope find files" })
+    vim.keymap.set("n", "<C-g>", builtin.live_grep,  { desc = "Telescope live grep" })
+    -- vim.keymap.set("n", "<leader>tb", builtin.buffers,    { desc = "Telescope buffers" })
+    -- vim.keymap.set("n", "<leader>th", builtin.help_tags,  { desc = "Telescope help tags" })
   end
 }

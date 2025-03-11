@@ -8,15 +8,19 @@ sudo apt install fd-find ripgrep
 
 ## キーバインド
 
-- `\c`: コメントイン・アウトの切り替え, 1行・複数行ともに利用可 (`numToStr/Comment.nvim`)
-- `ctrl + f`: ファイラーのオン・オフ (`nvim-tree/nvim-tree.lua`)
-- `\?`: キーバインドの確認 (`folke/which-key.nvim`)
-- `sy`, `sp`: 外部ファイルを利用したYank, Paste (`vim-scripts/yanktmp.vim`)
-- `Ctrl + i`: インデントガイドの表示切り替え
-
-- `Shift + F`: 言語に応じたフォーマット
-- `Shift + O`: JSONのKeySortありフォーマット
-
+- Edit
+    - `\c`: コメントイン・アウトの切り替え, 1行・複数行ともに利用可 (`numToStr/Comment.nvim`)
+    - `sy`, `sp`: 外部ファイルを利用したYank, Paste (`vim-scripts/yanktmp.vim`)
+- Tools
+    - `\?`: キーバインドの確認 (`folke/which-key.nvim`)
+    - `ctrl + f`: ファイラーのオン・オフ (`nvim-tree/nvim-tree.lua`)
+    - `Ctrl + i`: インデントガイドの表示切り替え
+- Format
+    - `Shift + F`: 言語に応じたフォーマット
+    - `Shift + O`: JSONのKeySortありフォーマット
+- telescope
+    - `Ctrl + g`: Telescope live grep
+    - `Ctrl + h`: Telescope find files
 - バッファ操作
     - `Ctrl + p`, `\bp`: 前に
     - `Ctrl + n`, `\bn`: 次に
