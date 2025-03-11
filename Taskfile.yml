@@ -7,12 +7,30 @@ vars:
 tasks:
   default:
     cmds:
-      - task: lint
+      - task: format
+      - task: lint_and_test
+
+  lint_and_test:
+    deps: [lint, test]
+
+  format:
+    deps: [format_lua]
 
   lint:
+    deps: [lint_lua, lint_shell]
+
+  format_lua:
+    cmds:
+      - '{{.BIN_CODEFORMAT}} format --config .editorconfig --workspace lua'
+
+  lint_lua:
     cmds:
       - '{{.BIN_CODEFORMAT}} check --config .editorconfig --diagnosis-as-error --workspace lua'
 
-  format:
+  lint_shell:
     cmds:
-      - '{{.BIN_CODEFORMAT}} format --config .editorconfig --workspace lua'
+      - shellcheck *.sh
+
+  test:
+    cmds:
+      - ':'
