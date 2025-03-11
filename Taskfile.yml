@@ -1,0 +1,18 @@
+---
+version: '3'
+
+vars:
+  BIN_CODEFORMAT: ~/.local/opt/EmmyLuaCodeStyle/bin/CodeFormat
+
+tasks:
+  default:
+    cmds:
+      - task: lint
+
+  lint:
+    cmds:
+      - '{{.BIN_CODEFORMAT}} check --config .editorconfig --diagnosis-as-error --workspace lua'
+
+  format:
+    cmds:
+      - '{{.BIN_CODEFORMAT}} format --config .editorconfig --workspace lua'
