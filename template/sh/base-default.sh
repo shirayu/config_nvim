@@ -11,4 +11,6 @@ trap 'rm -rf "${TMPDIR}"' EXIT INT TERM HUP
 
 FOO=${FOO:-"DEFAULT_VALUE"}
 BAR=${BAR:?No value is given for BAR}
+
+# shellcheck disable=SC2034
 MYDATE=$(date '+%Y-%m-%d-%H:%M:%S')

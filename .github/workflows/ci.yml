@@ -34,7 +34,7 @@ jobs:
           wget -q https://github.com/CppCXY/EmmyLuaCodeStyle/releases/download/1.5.6/linux-x64.zip -O /tmp/linux-x64.zip
           unzip -q /tmp/linux-x64.zip -d /tmp/
           mv /tmp/linux-x64 $HOME/.local/opt/EmmyLuaCodeStyle
-          chmod a+x local/opt/EmmyLuaCodeStyle/bin/*
+          chmod a+x $HOME/.local/opt/EmmyLuaCodeStyle/bin/*
 
       - name: Verify installation
         run: ls -l $HOME/.local/opt/EmmyLuaCodeStyle
