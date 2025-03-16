@@ -22,6 +22,8 @@ ExistCmd pnpm || exit 1
 ExistCmd pip || exit 1
 ExistCmd python || exit 1
 ExistCmd nvim || exit 1
+
+# For nvim-telescope/telescope.nvim
 ExistCmd rg
 ExistCmd fdfind
 
