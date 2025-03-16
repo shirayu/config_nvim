@@ -20,5 +20,7 @@ return {
     end
   end,
   opts = {
+    animation = false,
+    clickable = false,
   },
 }
