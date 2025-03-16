@@ -2,9 +2,12 @@
 
 # sudo apt install fd-find ripgrep
 
+C_RED='\033[31m'
+C_END='\033[m\n'
+
 ExistCmd() {
     echo "Checking $1"
-    type "$1" || (echo "$2" && exit 1)
+    type "$1" || (echo -e "${C_RED}Not found: $1${C_END}" && exit 1)
 }
 
 SortJson() {
