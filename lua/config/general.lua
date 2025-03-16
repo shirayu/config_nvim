@@ -63,3 +63,20 @@ vim.api.nvim_create_user_command("Nfkc", function()
     vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(result, "\n"))
   end
 end, {})
+
+-- ファイル更新通知
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
+  pattern = "*",
+  callback = function()
+    if vim.fn.getcmdwintype() == "" then
+      vim.cmd("checktime")
+    end
+  end,
+})
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.notify("File has been updated by another process!", vim.log.levels.WARN)
+  end,
+})
