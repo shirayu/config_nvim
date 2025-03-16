@@ -29,8 +29,10 @@ ExistCmd fdfind
 
 if [[ $1 == "load" ]]; then
     pnpm -C "${DIR_ROOT}/tools" install
+    nvim --headless "+Lazy restore" "+Lazy clean" +qa
 
 elif [[ $1 == "update" ]]; then
+    nvim --headless "+Lazy! sync" "+Lazy clean" +qa
     pnpm -C "${DIR_ROOT}/tools" up --latest
 else
     echo -e "\nUsage: $0 [load|update]" >&2
