@@ -3,11 +3,11 @@
 # sudo apt install fd-find ripgrep
 
 C_RED='\033[31m'
-C_END='\033[m\n'
+C_END='\033[m'
 
 ExistCmd() {
     echo "Checking $1"
-    type "$1" || (echo -e "${C_RED}Not found: $1${C_END}" && exit 1)
+    type "$1" || (echo -e "${C_RED}Not found: $1${C_END}\n" && exit 1)
 }
 
 SortJson() {
@@ -16,6 +16,12 @@ SortJson() {
 
 DIR_ROOT="${HOME}/.config/nvim"
 mkdir -p "${DIR_ROOT}/lock"
+
+AVANTE_SETTING_FILE=./lua/plugins/settings/avante_setting.lua
+if [[ ! -e ${AVANTE_SETTING_FILE} ]]; then
+    echo -e "${C_RED}Not fund:${C_END} ${AVANTE_SETTING_FILE}" >&2
+    exit 1
+fi
 
 ExistCmd npm || exit 1
 ExistCmd pnpm || exit 1
