@@ -25,3 +25,8 @@ sudo apt install fd-find ripgrep
     - `Ctrl + p`, `\bp`: 前に
     - `Ctrl + n`, `\bn`: 次に
     - `\bc`: 閉じる
+- Avante
+    - `\aa`: サイドバーの表示
+    - `\ar`: サイドバーの更新
+    - `\af`: サイドバーのフォーカス切り替え
+    - `\ae`: 選択したブロックの編集
