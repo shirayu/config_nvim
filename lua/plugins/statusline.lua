@@ -1,13 +1,11 @@
 local function unicode_at_cursor()
-  local pos = vim.api.nvim_win_get_cursor(0)
-  local row, col = pos[1], pos[2]
-
-  local line = vim.api.nvim_buf_get_lines(0, row - 1, row, false)[1]
-  if not line or col >= vim.fn.strchars(line) then
+  local line = vim.fn.getline(".")
+  local pos = vim.fn.getcursorcharpos(".")[3] - 1
+  -- return string.format("[??][%s]", pos)
+  local char = vim.fn.strcharpart(line, pos, 1)
+  if char == "" then
     return ""
   end
-
-  local char = vim.fn.strcharpart(line, col, 1)
   return string.format("[%s][U+%04X]", char, vim.fn.char2nr(char))
 end
 
