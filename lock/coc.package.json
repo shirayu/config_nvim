@@ -11,7 +11,7 @@
     "coc-sh": ">=1.2.4",
     "coc-texlab": ">=3.3.0",
     "coc-toml": ">=1.2.5",
-    "coc-tsserver": ">=2.2.2",
+    "coc-tsserver": ">=2.2.3",
     "coc-yaml": ">=1.9.1"
   }
 }
