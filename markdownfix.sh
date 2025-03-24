@@ -8,8 +8,8 @@ fi
 set -e
 
 SCRIPT_DIR=$(
-    cd "$(dirname "${BASH_SOURCE:-$0}")" || exit 1 &&
-        pwd
+    cd "$(dirname "${BASH_SOURCE:-$0}")" || exit 1 \
+        && pwd
 )
 unset tmpfile
 
@@ -22,12 +22,15 @@ trap 'rc=$?; trap - EXIT; atexit; exit $?' INT PIPE TERM
 
 tmpfile=$(mktemp "/tmp/${0##*/}.tmp.XXXXXX")
 
-CONFIG_ARG=""
-if [ -f '.markdownlint.json' ]; then
-    CONFIG_ARG="-c .markdownlint.json"
-elif [ -f "${HOME}/.markdownlint.json" ]; then
-    CONFIG_ARG="-c ${HOME}/.markdownlint.json"
-fi
+CONFIG_ARG="${HOME}/.markdownlintrc"
+path_target="$1"
+while [ "$path_target" != "/" ]; do
+    if [ -f "${path_target}/markdownlint.json" ]; then
+        CONFIG_ARG="${path_target}/markdownlint.json"
+        break
+    fi
+    path_target=$(dirname "$path_target")
+done
 
 cat - >"$tmpfile"
 eval "npx -C ${SCRIPT_DIR}/tools markdownlint -f ${tmpfile} ${CONFIG_ARG}" 2>/dev/null || :

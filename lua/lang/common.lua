@@ -3,7 +3,7 @@ local function format_code()
     vim.cmd("CocCommand python.sortImports")
   elseif vim.bo.filetype == "markdown" then
     local spath = vim.fn.stdpath("config") .. "/markdownfix.sh"
-    ExecForTexts("bash", spath)
+    ExecForTexts("bash", spath .. " " .. vim.fn.expand("%:p"))
     return
   elseif vim.bo.filetype == "sh" or vim.bo.filetype == "zsh" then
     ExecForTexts("shfmt", "-i 4 -ci -bn -s")
