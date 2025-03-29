@@ -1,19 +1,23 @@
 {
-  "Lua.diagnostics.globals": ["vim"],
-  "diagnostic.displayByVimDiagnostic":true,
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck",
-    "yaml": ["yamllint"]
+    "yaml": [
+      "yamllint"
+    ]
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt"
   },
   "diagnostic.checkCurrentLine": true,
+  "diagnostic.displayByVimDiagnostic": true,
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.parameterTypes": false,
   "pyright.inlayHints.variableTypes": false,
-  "python.formatting.provider": "ruff",
   "pyright.organizeimports.provider": "ruff",
+  "python.formatting.provider": "ruff",
   "python.linting.ruffEnabled": true,
   "yaml.schemaStore.enable": true,
   "yaml.schemas": {
