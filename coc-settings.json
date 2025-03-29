@@ -1,5 +1,6 @@
 {
   "Lua.diagnostics.globals": ["vim"],
+  "diagnostic.displayByVimDiagnostic":true,
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck",
     "yaml": ["yamllint"]

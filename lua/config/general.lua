@@ -80,3 +80,18 @@ vim.api.nvim_create_autocmd("FileChangedShellPost", {
     vim.notify("File has been updated by another process!", vim.log.levels.WARN)
   end,
 })
+
+vim.diagnostic.config({
+  -- Use the default configuration
+  -- virtual_lines = true
+  -- virtual_text = true
+  virtual_text = {
+    format = function(diagnostic)
+      return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
+    end,
+  },
+  signs = true,
+  severity_sort = true,
+  underline = true,
+  update_in_insert = false,
+})
