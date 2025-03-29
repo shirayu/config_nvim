@@ -15,8 +15,8 @@ end
 
 local function format_code_json_sorted()
   ExecForTexts("python3",
-    '-c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=2,ensure_ascii=False,sort_keys=True))"')
-  vim.cmd("Format")
+    '-c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),ensure_ascii=False,sort_keys=True))"')
+  format_code()
 end
 
 -- Shift + F
