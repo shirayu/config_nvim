@@ -11,7 +11,7 @@ ExistCmd() {
 }
 
 SortJson() {
-    python3 -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=2,ensure_ascii=False,sort_keys=True))"
+    npx biome format --stdin-file-path=dummy.json
 }
 
 DIR_ROOT="${HOME}/.config/nvim"
@@ -34,11 +34,13 @@ ExistCmd rg
 ExistCmd fdfind
 
 if [[ $1 == "load" ]]; then
+    pnpm install
     pnpm -C "${DIR_ROOT}/tools" install
     nvim --headless "+Lazy restore" "+Lazy clean" +qa
 
 elif [[ $1 == "update" ]]; then
     nvim --headless "+Lazy! sync" "+Lazy clean" +qa
+    pnpm up --latest
     pnpm -C "${DIR_ROOT}/tools" up --latest
 else
     echo -e "\nUsage: $0 [load|update]" >&2
