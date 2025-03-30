@@ -1,3 +1,4 @@
+require("config.version_check")
 require("config.general")
 require("config.key")
 require("config.util")
