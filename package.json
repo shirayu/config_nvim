@@ -1,0 +1,30 @@
+{
+  "author": "",
+  "description": "",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@taplo/cli": "^0.7.0",
+    "markdownlint-cli": "^0.44.0",
+    "npm-run-all2": "^7.0.2"
+  },
+  "engines": {
+    "npm": "Use pnpm instead of npm!"
+  },
+  "license": "",
+  "main": "",
+  "name": "garoh",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "format": "run-p format:biome format:markdownlint format:toml",
+    "format:biome": "biome check --write",
+    "format:markdownlint": "markdownlint -f ./*.md doc/*.md",
+    "format:toml": "taplo format *.toml",
+    "test": ":",
+    "lint": "run-p lint:biome lint:md lint:toml",
+    "lint:biome": "biome check",
+    "lint:md": "npx markdownlint *.md",
+    "lint:toml": "taplo format --check *.toml"
+  },
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.7.0"
+}

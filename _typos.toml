@@ -4,7 +4,6 @@
 [default.extend-identifiers]
 
 [default.extend-words]
-Ccomment="Ccomment"
 
 [files]
 extend-exclude = ['package*.json', '*.min.js']
