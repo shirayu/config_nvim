@@ -3,7 +3,7 @@ require("config.general")
 require("config.key")
 require("config.util")
 
-require("config.lazy")
+require("config.lazy_nvim")
 
 local plugins = {
   { import = "plugins" },
