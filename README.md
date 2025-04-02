@@ -11,6 +11,8 @@ sudo apt install fd-find ripgrep
 - Edit
     - `\c`: コメントイン・アウトの切り替え, 1行・複数行ともに利用可 (`numToStr/Comment.nvim`)
     - `sy`, `sp`: 外部ファイルを利用したYank, Paste (`vim-scripts/yanktmp.vim`)
+- coc.nvim
+    - `<space>a`: diagnosticsの表示
 - Tools
     - `\?`: キーバインドの確認 (`folke/which-key.nvim`)
     - `ctrl + f`: ファイラーのオン・オフ (`nvim-tree/nvim-tree.lua`)
