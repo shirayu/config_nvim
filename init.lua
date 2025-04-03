@@ -1,5 +1,6 @@
 require("config.version_check")
 require("config.general")
+require("config.diagnostic")
 require("config.key")
 require("config.util")
 
