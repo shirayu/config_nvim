@@ -11,7 +11,8 @@ ExistCmd() {
 }
 
 SortJson() {
-    npx biome format --stdin-file-path=dummy.json
+    python3 -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=2,ensure_ascii=False,sort_keys=True))" \
+        | npx biome format --stdin-file-path=dummy.json
 }
 
 DIR_ROOT="${HOME}/.config/nvim"

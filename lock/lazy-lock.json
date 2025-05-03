@@ -1,6 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
-  "avante.nvim": { "branch": "main", "commit": "8f23cc85ab4f4318dc9029ea33f447199b1cf09e" },
+  "avante.nvim": { "branch": "main", "commit": "e3af524bc1d95b2790602edff4e884d613ae8c9a" },
   "barbar.nvim": { "branch": "master", "commit": "3a74402bdf04745a762de83d5c5e88e3e9b0e2e0" },
   "coc.nvim": { "branch": "release", "commit": "6014802cd24c4e761a3d97375e9234e63661c964" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
