@@ -2,12 +2,16 @@
 --
 -- See https://github.com/yetone/avante.nvim/wiki/Custom-providers
 
--- vim.fn.setenv("OPENAI_API_KEY", "DUMMY")
+vim.fn.setenv("DUMMY_API_KEY", "DUMMY")
 
 return {
+  provider = "openrouter",
   providers = {
-    ollama = {
-      model = "qwq:32b",
-    }
+    openrouter = {
+      __inherited_from = "openai",
+      endpoint = "http://localhost:9090/v1",
+      api_key_name = "DUMMY_API_KEY",
+      model = "Qwen/QwQ-32B-GGUF:q4_k_m",
+    },
   },
 }
