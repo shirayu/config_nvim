@@ -1,4 +1,13 @@
 local avante_opts = require("plugins.settings.avante_setting")
+avante_opts.input = {
+  provider = "snacks",
+  provider_opts = {
+    -- Additional snacks.input options
+    title = "Avante Input",
+    icon = " ",
+  },
+}
+
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
@@ -9,8 +18,8 @@ return {
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
-    "stevearc/dressing.nvim", -- FXIME: Deprecated: https://github.com/yetone/avante.nvim/issues/1278
     "nvim-lua/plenary.nvim",
+    "folke/snacks.nvim", -- Configuration
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
     "hrsh7th/nvim-cmp",            -- autocompletion for avante commands and mentions
