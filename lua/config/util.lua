@@ -36,7 +36,7 @@ function ExecForTexts(command, args)
   end
 end
 
-function load_lua_files_from(dir)
+function LoadLuaFilesFrom(dir)
   local luv = vim.loop
   local path = vim.fn.stdpath("config") .. "/lua/" .. dir
   local handle = luv.fs_scandir(path)

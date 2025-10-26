@@ -14,4 +14,4 @@ local opts = {
 }
 require("lazy").setup(plugins, opts)
 
-load_lua_files_from("lang")
+LoadLuaFilesFrom("lang")
