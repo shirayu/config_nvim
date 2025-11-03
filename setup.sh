@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
 # sudo apt install fd-find ripgrep
+#
+SCRIPT_DIR=$(
+    cd "$(dirname "${BASH_SOURCE:-$0}")" || exit 1 \
+        && pwd
+)
+cd "${SCRIPT_DIR}" || exit 1
 
 C_RED='\033[31m'
 C_END='\033[m'
