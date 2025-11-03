@@ -21,7 +21,7 @@ mkdir -p "${DIR_ROOT}/lock"
 AVANTE_SETTING_FILE="${DIR_ROOT}/lua/plugins/settings/avante_setting.lua"
 if [[ ! -e ${AVANTE_SETTING_FILE} ]]; then
     echo -e "${C_RED}Not found:${C_END} ${AVANTE_SETTING_FILE}" >&2
-    exit 1
+    cp "${DIR_ROOT}/lua/plugins/settings/avante_setting.example.lua" "${AVANTE_SETTING_FILE}"
 fi
 
 ExistCmd npm || exit 1
