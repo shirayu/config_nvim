@@ -20,7 +20,7 @@ atexit() {
 trap atexit EXIT
 trap 'rc=$?; trap - EXIT; atexit; exit $?' INT PIPE TERM
 
-tmpfile=$(mktemp "/tmp/${0##*/}.tmp.XXXXXX")
+tmpfile=$(mktemp ".${0##*/}.tmp.XXXXXX")
 
 CONFIG_ARG="${HOME}/.markdownlintrc"
 path_target=$(dirname "$1")
@@ -38,5 +38,9 @@ if [ -e "${path_target}/node_modules/markdownlint-cli" ]; then
 fi
 
 cat - >"$tmpfile"
+
+# For debug
+# eval "npx -C ${DIR_MAKDOWNLINT_PARENT} markdownlint -f ${tmpfile} ${CONFIG_ARG}" 2>&1 || :
+
 eval "npx -C ${DIR_MAKDOWNLINT_PARENT} markdownlint -f ${tmpfile} ${CONFIG_ARG}" 2>/dev/null || :
 cat "$tmpfile"
