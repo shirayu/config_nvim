@@ -20,7 +20,7 @@ atexit() {
 trap atexit EXIT
 trap 'rc=$?; trap - EXIT; atexit; exit $?' INT PIPE TERM
 
-tmpfile=$(mktemp ".${0##*/}.tmp.XXXXXX")
+tmpfile=$(mktemp)
 
 CONFIG_ARG="${HOME}/.markdownlintrc"
 path_target=$(dirname "$1")
