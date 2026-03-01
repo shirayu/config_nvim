@@ -4,7 +4,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.4",
     "@taplo/cli": "^0.7.0",
-    "markdownlint-cli": "^0.47.0",
+    "markdownlint-cli2": "^0.21.0",
     "npm-run-all2": "^8.0.4"
   },
   "engines": {
@@ -17,12 +17,12 @@
     "preinstall": "npx only-allow pnpm",
     "format": "run-p format:biome format:markdownlint format:toml",
     "format:biome": "biome check --write",
-    "format:markdownlint": "markdownlint -f ./*.md doc/*.md",
+    "format:markdownlint": "markdownlint-cli2 --fix \"*.md\" \"doc/*.md\"",
     "format:toml": "taplo format *.toml",
     "test": ":",
     "lint": "run-p lint:biome lint:md lint:toml",
     "lint:biome": "biome check",
-    "lint:md": "markdownlint *.md",
+    "lint:md": "markdownlint-cli2 \"*.md\"",
     "lint:toml": "taplo format --check *.toml"
   },
   "version": "1.0.0",
