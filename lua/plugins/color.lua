@@ -2,9 +2,13 @@ return {
   {
     "NvChad/nvim-colorizer.lua",
     opts = {
-      user_default_options = {
-        mode = "background",
-        names = false,
+      options = {
+        parsers = {
+          names = { enable = false },
+        },
+        display = {
+          mode = "background",
+        },
       },
     },
   },
