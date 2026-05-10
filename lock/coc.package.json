@@ -10,7 +10,7 @@
     "coc-pyright": ">=1.1.408",
     "coc-sh": ">=1.2.4",
     "coc-texlab": ">=3.3.0",
-    "coc-toml": ">=1.2.5",
+    "coc-toml": ">=2.0.3",
     "coc-tsserver": ">=2.3.1",
     "coc-yaml": ">=1.9.1"
   }
