@@ -44,8 +44,12 @@ fi
 
 cat - >"$tmpfile"
 
-# For debug
-# eval "npx -C ${DIR_MAKDOWNLINT_PARENT} markdownlint-cli2 --fix ${CONFIG_ARG} ${tmpfile}" 2>&1 || :
+# --no-globs: only ever lint/fix the single tmpfile passed on the command
+# line, never the "globs" property from the discovered config (which would
+# otherwise make markdownlint-cli2 --fix every matching file in the project).
 
-eval "npx -C ${DIR_MAKDOWNLINT_PARENT} markdownlint-cli2 --fix ${CONFIG_ARG} ${tmpfile}" >/dev/null 2>&1 || :
+# For debug
+# eval "npx -C ${DIR_MAKDOWNLINT_PARENT} markdownlint-cli2 --fix --no-globs ${CONFIG_ARG} ${tmpfile}" 2>&1 || :
+
+eval "npx -C ${DIR_MAKDOWNLINT_PARENT} markdownlint-cli2 --fix --no-globs ${CONFIG_ARG} ${tmpfile}" >/dev/null 2>&1 || :
 cat "$tmpfile"
