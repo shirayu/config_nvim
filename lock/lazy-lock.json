@@ -9,7 +9,7 @@
   "numb.nvim": { "branch": "master", "commit": "40548e23f3b053defdc5daa99943e05132b99cc9" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "72a05f62c52241bc7441c820eb53946f92b2e6a4" },
   "nvim-hlslens": { "branch": "main", "commit": "be2d7b2be01860b5445a007ff2bc72b29896db6b" },
-  "nvim-scrollbar": { "branch": "main", "commit": "00fe857e7cd97ee5e556de643ee920b003a96b03" },
+  "nvim-scrollbar": { "branch": "refactor/v2", "commit": "90665755de1ba5b29012419dbd844b7871bc1b6d" },
   "nvim-tree.lua": { "branch": "master", "commit": "9a2e0006d42f292eb3ade7dfdff201a7429a780c" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "6141a40173c6efa98242dc951ed4b6f892c97027" },
   "nvim-web-devicons": { "branch": "master", "commit": "ec309a0eaff6ea967e58c275996155ab5c16938d" },

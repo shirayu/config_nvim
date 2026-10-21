@@ -1,6 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
-  dependencies = { "petertriho/nvim-scrollbar" },
+  dependencies = { { "petertriho/nvim-scrollbar", branch = "refactor/v2" } },
   config = function()
     require("gitsigns").setup({
       signs                        = {
@@ -52,6 +52,8 @@ return {
         col = 1
       },
     })
-    require("scrollbar.handlers.gitsigns").setup()
+    require("scrollbar").setup({
+      providers = { gitsigns = true },
+    })
   end
 }
