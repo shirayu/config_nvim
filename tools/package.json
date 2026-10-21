@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@biomejs/biome": "^2.4.13",
-    "markdownlint-cli2": "^0.22.1"
+    "@biomejs/biome": "^2.5.15",
+    "markdownlint-cli2": "^0.23.3"
   }
 }
