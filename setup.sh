@@ -33,6 +33,26 @@ ExistCmd() {
     fi
 }
 
+# Detect node_modules linked from a different pnpm store (e.g. after a pnpm major upgrade)
+# which makes pnpm fail with ERR_PNPM_UNEXPECTED_STORE.
+CheckPnpmStore() {
+    local dir="$1"
+    local modules_yaml="${dir}/node_modules/.modules.yaml"
+    [[ -f ${modules_yaml} ]] || return 0
+
+    local linked_store wanted_store
+    linked_store=$(sed -n 's/^[[:space:]]*"\{0,1\}storeDir"\{0,1\}:[[:space:]]*"\{0,1\}\([^",]*\)"\{0,1\},\{0,1\}$/\1/p' "${modules_yaml}" | head -n 1)
+    wanted_store=$(cd "${dir}" && pnpm store path)
+    if [[ -n ${linked_store} && ${linked_store} != "${wanted_store}" ]]; then
+        echo -e "${C_RED}pnpm store mismatch in ${dir}${C_END}" >&2
+        echo "  linked from: ${linked_store}" >&2
+        echo "  pnpm wants : ${wanted_store}" >&2
+        echo "  (pnpm $(pnpm --version); the major version probably changed)" >&2
+        echo "Fix: rm -rf '${dir}/node_modules' && pnpm -C '${dir}' install" >&2
+        exit 1
+    fi
+}
+
 SortJson() {
     python3 -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=2,ensure_ascii=False,sort_keys=True))" \
         | npx biome format --stdin-file-path=dummy.json
@@ -44,6 +64,8 @@ mkdir -p "${DIR_ROOT}/lock"
 ExistCmd mise
 ExistCmd npm
 ExistCmd pnpm
+CheckPnpmStore "${DIR_ROOT}"
+CheckPnpmStore "${DIR_ROOT}/tools"
 ExistCmd pip
 ExistCmd python3
 ExistCmd nvim
