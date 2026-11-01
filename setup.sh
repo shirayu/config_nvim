@@ -30,6 +30,7 @@ if [[ ! -e ${AVANTE_SETTING_FILE} ]]; then
     cp "${DIR_ROOT}/lua/plugins/settings/avante_setting.example.lua" "${AVANTE_SETTING_FILE}"
 fi
 
+ExistCmd mise || exit 1
 ExistCmd npm || exit 1
 ExistCmd pnpm || exit 1
 ExistCmd pip || exit 1
@@ -41,11 +42,15 @@ ExistCmd rg
 ExistCmd fdfind
 
 if [[ $1 == "load" ]]; then
+    mise trust
+    mise install
     pnpm install
     pnpm -C "${DIR_ROOT}/tools" install
     nvim --headless "+Lazy restore" "+Lazy clean" +qa
 
 elif [[ $1 == "update" ]]; then
+    mise trust
+    mise up
     nvim --headless "+Lazy! sync" "+Lazy clean" +qa
     pnpm up --latest
     pnpm -C "${DIR_ROOT}/tools" up --latest
