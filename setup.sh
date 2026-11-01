@@ -104,7 +104,6 @@ case "${MODE}" in
         pnpm -C "${DIR_ROOT}/tools" up --latest
 
         nvim -c 'CocUpdateSync|q'
-        rm -f "${COC_EXTENSIONS_DIR}/package-lock.json"
         npm i --package-lock-only -C "${COC_EXTENSIONS_DIR}"
         python3 -c 'import sys, json; d=json.load(sys.stdin); d.pop("lastUpdate", None); print(json.dumps(d))' \
             <"${COC_EXTENSIONS_DIR}/package.json" \
