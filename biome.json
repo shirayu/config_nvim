@@ -34,7 +34,8 @@
     "rules": {
       "preset": "recommended",
       "nursery": {
-        "noDuplicateMapKeys": "error"
+        "noDuplicateMapKeys": "error",
+        "noYamlBooleanKeys": "error"
       },
       "style": {
         "noParameterAssign": "error",
