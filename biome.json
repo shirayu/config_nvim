@@ -33,6 +33,9 @@
     "enabled": true,
     "rules": {
       "preset": "recommended",
+      "nursery": {
+        "noDuplicateMapKeys": "error"
+      },
       "style": {
         "noParameterAssign": "error",
         "useAsConstAssertion": "error",
