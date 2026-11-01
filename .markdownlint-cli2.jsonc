@@ -8,5 +8,5 @@
     "MD026": false
   },
   "globs": ["**/*.md"],
-  "ignores": ["node_modules", ".venv", "tmp"]
+  "ignores": ["**/node_modules", "**/.venv", "**/tmp"]
 }
