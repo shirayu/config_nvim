@@ -1,8 +1,7 @@
 {
   "Lua.diagnostics.globals": ["vim"],
   "diagnostic-languageserver.filetypes": {
-    "sh": "shellcheck",
-    "yaml": ["yamllint"]
+    "sh": "shellcheck"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt"

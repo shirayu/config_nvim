@@ -1,6 +1,6 @@
 ---
 name: CI
-on:  # yamllint disable-line rule:truthy
+on:
   push:
   pull_request:
     types:
@@ -41,7 +41,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.1.0
@@ -61,7 +61,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
 
       - name: Install Task
         uses: arduino/setup-task@v2

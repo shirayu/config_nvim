@@ -1,5 +1,5 @@
 ---
-version: '3'
+version: "3"
 
 vars:
   BIN_CODEFORMAT: ~/.local/opt/EmmyLuaCodeStyle/bin/CodeFormat
@@ -21,13 +21,13 @@ tasks:
 
   format_lua:
     cmds:
-      - '{{.BIN_CODEFORMAT}} format --config .editorconfig --overwrite -f init.lua'
-      - '{{.BIN_CODEFORMAT}} format --config .editorconfig --workspace lua'
+      - "{{.BIN_CODEFORMAT}} format --config .editorconfig --overwrite -f init.lua"
+      - "{{.BIN_CODEFORMAT}} format --config .editorconfig --workspace lua"
 
   lint_lua:
     cmds:
-      - '{{.BIN_CODEFORMAT}} check --config .editorconfig --diagnosis-as-error -f init.lua'
-      - '{{.BIN_CODEFORMAT}} check --config .editorconfig --diagnosis-as-error --workspace lua'
+      - "{{.BIN_CODEFORMAT}} check --config .editorconfig --diagnosis-as-error -f init.lua"
+      - "{{.BIN_CODEFORMAT}} check --config .editorconfig --diagnosis-as-error --workspace lua"
 
   lint_shell:
     cmds:
@@ -42,4 +42,4 @@ tasks:
 
   test:
     cmds:
-      - ':'
+      - ":"
