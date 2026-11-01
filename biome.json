@@ -18,6 +18,11 @@
       "enabled": true
     }
   },
+  "markdown": {
+    "formatter": {
+      "enabled": false
+    }
+  },
   "javascript": {
     "formatter": {
       "enabled": true,
