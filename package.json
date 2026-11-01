@@ -4,6 +4,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
     "@taplo/cli": "^0.7.0",
+    "@tombi-toml/cli": "^1.9.8",
     "markdownlint-cli2": "^0.24.0",
     "npm-run-all2": "^9.0.3"
   },

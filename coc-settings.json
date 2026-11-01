@@ -13,6 +13,8 @@
   "pyright.inlayHints.parameterTypes": false,
   "pyright.inlayHints.variableTypes": false,
   "pyright.organizeimports.provider": "ruff",
+  "tombi.path": "${userHome}/.config/nvim/node_modules/.bin/tombi",
+  "tombi.updates.checkOnStartup": false,
   "python.formatting.provider": "ruff",
   "python.linting.ruffEnabled": true,
   "yaml.schemaStore.enable": true,
