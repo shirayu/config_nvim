@@ -78,6 +78,7 @@ case "${MODE}" in
         mise up
         nvim --headless "+Lazy! sync" "+Lazy clean" +qa
         pnpm up --latest
+        pnpm exec biome migrate --write
         pnpm -C "${DIR_ROOT}/tools" up --latest
 
         nvim -c 'CocUpdateSync|q'
