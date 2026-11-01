@@ -103,6 +103,9 @@ case "${MODE}" in
         pnpm exec biome migrate --write
         pnpm -C "${DIR_ROOT}/tools" up --latest
 
+        mkdir -p "${COC_EXTENSIONS_DIR}"
+        cp "${DIR_ROOT}/lock/coc.package.json" "${COC_EXTENSIONS_DIR}/package.json"
+        cp "${DIR_ROOT}/lock/coc.package-lock.json" "${COC_EXTENSIONS_DIR}/package-lock.json"
         nvim -c 'CocUpdateSync|q'
         npm i --package-lock-only -C "${COC_EXTENSIONS_DIR}"
         python3 -c 'import sys, json; d=json.load(sys.stdin); d.pop("lastUpdate", None); print(json.dumps(d))' \
