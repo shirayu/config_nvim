@@ -27,5 +27,9 @@
       "*Taskfile.dist.yaml",
       "*taskfile.dist.yaml"
     ]
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://www.schemastore.org": true,
+    "https://biomejs.dev": true
   }
 }
